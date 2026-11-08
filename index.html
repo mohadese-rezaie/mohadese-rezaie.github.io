@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--BODY-START-->
+<title>Mohi Rezaei Scenography</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mohi Rezaei — set designer, scenographer and exhibition designer based in Oxford, UK.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a gallery wall. Generous white space, images hung on a grid, each with a museum-style wall label. */
+:root{
+  --wall:#f3f1ec;      /* gallery wall */
+  --plinth:#e8e4dc;    /* image ground, rules */
+  --ink:#1d1b19;
+  --muted:#6b655d;
+  --oxblood:#7b2d26;   /* accent from Mohi's portfolio PDF */
+  --rule:#d6d0c5;
+  --display:"Libre Caslon Display","Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --serif:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --max:1240px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --wall:#191715;--plinth:#24211e;--ink:#ece7df;--muted:#a59d92;--oxblood:#d4776c;--rule:#38332e;color-scheme:dark}}
+:root[data-theme="dark"]{--wall:#191715;--plinth:#24211e;--ink:#ece7df;--muted:#a59d92;--oxblood:#d4776c;--rule:#38332e;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--wall);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--oxblood);color:var(--wall)}
+:focus-visible{outline:2px solid var(--oxblood);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:700px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--wall)}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--wall) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+header.site .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-block:18px;flex-wrap:wrap}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.brand b{font:400 1.45rem/1.1 var(--display);letter-spacing:.01em}
+.brand span{font:500 .68rem/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+nav.main{display:flex;gap:22px}
+nav.main a{text-decoration:none;font-size:.9rem;font-weight:500;padding-block:4px;border-bottom:1px solid transparent}
+nav.main a:hover,nav.main a[aria-current="page"]{border-color:var(--oxblood);color:var(--oxblood)}
+
+/* type */
+.eyebrow{font:500 .7rem/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--oxblood)}
+h1,h2,h3{font-weight:400;text-wrap:balance;margin:0}
+.lede{font:400 clamp(2.1rem,5.2vw,4.1rem)/1.06 var(--display);letter-spacing:-.01em;max-width:16ch}
+.lede em{font-family:var(--serif);font-style:italic;color:var(--oxblood)}
+.prose{max-width:62ch}
+.prose p{margin:0 0 1em}
+
+/* home */
+.intro{display:grid;gap:40px;padding-block:56px 64px}
+@media (min-width:900px){.intro{grid-template-columns:5fr 7fr;align-items:end;gap:56px}}
+.intro p.sub{color:var(--muted);max-width:44ch;margin:22px 0 0;font-size:1.05rem}
+.feature{text-decoration:none;display:block}
+.feature .frame{background:var(--plinth);aspect-ratio:1/1;overflow:hidden}
+.feature img{object-position:50% 72%}
+[hidden]{display:none!important}
+.feature img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.feature:hover img{transform:scale(1.025)}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;padding-block:8px 28px;border-top:1px solid var(--rule);padding-top:28px;align-items:center}
+.filters .eyebrow{margin-right:8px;color:var(--muted)}
+.chip{font:500 .85rem/1 var(--sans);background:none;border:1px solid var(--rule);color:var(--ink);padding:9px 14px;border-radius:999px;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--wall);border-color:var(--ink)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:56px 36px;padding-bottom:96px}
+.card{text-decoration:none;display:flex;flex-direction:column;gap:16px}
+.card .frame{background:var(--plinth);aspect-ratio:4/3;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .7s ease}
+.card.drawing .frame{background:#fff}.card.drawing img{object-fit:contain;padding:10px}
+.card:hover img{transform:scale(1.03)}
+.card:hover h3{color:var(--oxblood)}
+
+/* wall label */
+.label{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:baseline}
+.label .no{font:400 .72rem/1.5 var(--mono);color:var(--muted);grid-row:span 3}
+.label h3{font:400 1.32rem/1.2 var(--display);transition:color .2s}
+.label .meta{font-size:.88rem;color:var(--muted)}
+.label .medium{font:italic .88rem/1.45 var(--serif);color:var(--muted)}
+
+/* project page */
+.back{display:inline-flex;gap:8px;font-size:.88rem;text-decoration:none;color:var(--muted);margin-top:32px}
+.back:hover{color:var(--oxblood)}
+.p-head{display:grid;gap:28px;padding-block:28px 40px}
+@media (min-width:900px){.p-head{grid-template-columns:7fr 5fr;gap:56px;align-items:end}}
+.p-head h1{font:400 clamp(2.2rem,5vw,3.8rem)/1.05 var(--display);letter-spacing:-.01em;margin-top:12px}
+dl.facts{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:0;font-size:.92rem;border-top:1px solid var(--rule);padding-top:18px}
+dl.facts dt{font:500 .68rem/1.9 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+dl.facts dd{margin:0}
+.p-hero{background:var(--plinth)}
+.p-hero img{width:100%;max-height:78vh;object-fit:contain;margin:0 auto;cursor:zoom-in}
+
+/* process: source → stages */
+.process{display:grid;gap:0;margin-top:64px;padding-bottom:40px}
+.step{display:grid;gap:20px;padding-block:40px;border-top:1px solid var(--rule)}
+@media (min-width:900px){.step{grid-template-columns:3fr 9fr;gap:56px}}
+.step-k{display:flex;flex-direction:column;gap:6px}
+.step-k .n{font:400 .74rem/1 var(--mono);color:var(--oxblood)}
+.step-k h2{font:400 1.6rem/1.15 var(--display)}
+.source{font:italic clamp(1.25rem,2.3vw,1.6rem)/1.4 var(--serif);max-width:34ch;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;padding:0;list-style:none}
+.tags li{font:400 .74rem/1 var(--mono);padding:7px 10px;border:1px solid var(--rule);color:var(--muted)}
+.plates{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:28px 22px;margin:0}
+.plates.two{grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr))}
+figure.plate{margin:0;display:flex;flex-direction:column;gap:10px}
+figure.plate button{all:unset;cursor:zoom-in;display:block;background:var(--plinth);aspect-ratio:4/3;overflow:hidden}
+figure.plate button:focus-visible{outline:2px solid var(--oxblood);outline-offset:3px}
+figure.plate img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+figure.plate button:hover img{transform:scale(1.03)}
+figure.plate.contain img{object-fit:contain;padding:8px}
+figcaption{font:italic .86rem/1.45 var(--serif);color:var(--muted)}
+figcaption .k{font:400 .7rem/1 var(--mono);font-style:normal;color:var(--oxblood);margin-right:8px}
+
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:20px;border-top:1px solid var(--rule);padding-block:32px 88px}
+.pager a{text-decoration:none;display:flex;flex-direction:column;gap:6px;min-width:0}
+.pager a:last-child{text-align:right;align-items:flex-end}
+.pager span{font:500 .68rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pager b{font:400 1.2rem/1.25 var(--display)}
+.pager a:hover b{color:var(--oxblood)}
+
+/* about */
+.about{display:grid;gap:56px;padding-block:56px 96px}
+@media (min-width:900px){.about{grid-template-columns:4fr 8fr;gap:64px}}
+.about aside{display:flex;flex-direction:column;gap:22px}
+.about h2.sec{font:400 1.5rem/1.2 var(--display);margin:56px 0 18px;padding-top:24px;border-top:1px solid var(--rule)}
+.about h2.sec:first-child{margin-top:0}
+ul.plain{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ul.plain li{padding-left:20px;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.75em;width:10px;height:1px;background:var(--oxblood)}
+.rows{display:grid;gap:22px}
+.row{display:grid;grid-template-columns:7.5rem 1fr;gap:4px 20px}
+.row .yr{font:400 .8rem/1.9 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.row b{font-weight:600}
+.row .at{color:var(--muted)}
+.row p{grid-column:2;margin:4px 0 0;font-size:.93rem;color:var(--muted)}
+@media (max-width:520px){.row{grid-template-columns:1fr}.row p{grid-column:1}}
+.btn{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;text-decoration:none;font-weight:600;font-size:.92rem;padding:13px 18px;border:1px solid var(--ink);transition:background .2s,color .2s}
+.btn:hover{background:var(--ink);color:var(--wall)}
+
+/* footer */
+footer.site{border-top:1px solid var(--rule);padding-block:48px 56px;background:var(--plinth)}
+footer .cols{display:grid;gap:28px}
+@media (min-width:800px){footer .cols{grid-template-columns:2fr 1fr 1fr;align-items:end}}
+footer .big{font:400 clamp(1.7rem,3.4vw,2.5rem)/1.1 var(--display);margin:10px 0 0}
+footer a.mail{font:400 1.05rem/1.4 var(--mono);text-decoration:none;border-bottom:1px solid var(--oxblood);word-break:break-all}
+footer small{color:var(--muted);font-size:.82rem}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;max-width:100vw;max-height:100vh;width:100vw;height:100vh;background:rgba(14,12,11,.94);color:#efe9e1}
+dialog.lb::backdrop{background:rgba(14,12,11,.94)}
+.lb-in{height:100%;display:grid;grid-template-rows:1fr auto;padding:calc(56px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb-in img{max-width:100%;max-height:100%;margin:auto;object-fit:contain;min-height:0}
+.lb-cap{text-align:center;font:italic .95rem/1.5 var(--serif);padding-top:14px;color:#cfc6ba}
+.lb button{position:absolute;background:none;border:1px solid rgba(255,255,255,.3);color:#efe9e1;width:44px;height:44px;cursor:pointer;font:400 1.1rem/1 var(--sans)}
+.lb button:hover{border-color:#fff}
+.lb .x{top:calc(10px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px))}
+.lb .pv{left:max(16px,env(safe-area-inset-left,0px));top:50%}
+.lb .nx{right:max(16px,env(safe-area-inset-right,0px));top:50%}
+
+.view{animation:fade .45s ease both}
+@keyframes fade{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<header class="site"><div class="wrap">
+  <a class="brand" href="#work"><b>Mohi Rezaei</b><span>Set Design · Scenography · Exhibition</span></a>
+  <nav class="main" aria-label="Main">
+    <a href="#work" data-nav="work">Work</a>
+    <a href="#about" data-nav="about">About &amp; CV</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+  </nav>
+</div></header>
+
+<main id="app"></main>
+
+<footer class="site" id="contact"><div class="wrap cols">
+  <div>
+    <div class="eyebrow">Contact</div>
+    <p class="big">Open to set, exhibition and spatial design roles and commissions.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <span class="eyebrow" style="color:var(--muted)">Email</span>
+    <a class="mail" id="mail" href="#"></a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px">
+    <span id="loc"></span>
+    <small>Right to work in the UK</small>
+    <small>© <span id="yr"></span> Mohadeseh Rezaei</small>
+  </div>
+</div></footer>
+
+<dialog class="lb" id="lb" aria-label="Image viewer">
+  <div class="lb-in"><img id="lb-img" alt=""><div class="lb-cap" id="lb-cap"></div></div>
+  <button class="x" id="lb-x" aria-label="Close">✕</button>
+  <button class="pv" id="lb-pv" aria-label="Previous image">←</button>
+  <button class="nx" id="lb-nx" aria-label="Next image">→</button>
+</dialog>
+
+<script>
+const DATA = {"projects": [{"slug": "noughts-and-crosses", "title": "Noughts & Crosses Story-space", "role": "Lead Artist & Exhibition Designer", "venue": "The Story Museum", "city": "Oxford", "country": "UK", "year": "2025–26", "sort": 2026, "category": "exhibition", "tags": ["Exhibition design", "Narrative space", "Visitor experience", "Youth workshops", "Symbolic material language"], "source": "Malorie Blackman, Noughts & Crosses (novel, 2001)", "text": "A new story-space for Malorie Blackman’s Noughts & Crosses, designed for the Enchanted Library Gallery. The installation visualises a world of division through opposing sides, a weighted justice scale, fractured thresholds, material contrast and small signs of resistance. The spatial language was developed through workshops with young participants and shaped into a reflective visitor experience for the 25th anniversary of the novel.", "stages": [["Realised space", [["noughts-3.jpg", "The reflective corner, looking out to an imagined sea"], ["noughts-1.jpg", "The threshold: a fractured line divides warm carpet from cold concrete"], ["noughts-2.jpg", "A weighted justice scale, always tipped in favour of one side"]]]], "accent": "#b07a3a", "images": [["noughts-3.jpg", "The reflective corner, looking out to an imagined sea"], ["noughts-1.jpg", "The threshold: a fractured line divides warm carpet from cold concrete"], ["noughts-2.jpg", "A weighted justice scale, always tipped in favour of one side"]], "hero": "noughts-3.jpg", "drawing": false}, {"slug": "resist-opera-nights", "title": "Resist Opera Nights", "role": "Co-Set Designer", "venue": "Kleine Bühne, Theater Basel", "city": "Basel", "country": "Switzerland", "year": "2022", "sort": 2022, "category": "theatre", "tags": ["Set design", "Performance environment", "Flexible staging", "Prop making", "Production collaboration"], "source": "Nine performance groups, one adaptable stage", "text": "A multifunctional and adaptable stage environment for nine performance groups. Working with artists and musicians in a fast-paced production setting, the design used flexible frames, repurposed materials and custom props to support rapidly changing performance needs. The project developed from concept through rehearsals, installation and live performance.", "stages": [["In performance", [["resist-1.jpg", "Flexible frames and a taped floor grid hold the stage open for each group"], ["resist-2.jpg", "Four performers at repurposed lecterns"], ["resist-3.jpg", "A suspended frame reconfigured for another evening"], ["resist-4.jpg", "Lines of rope divide the space in blue light"], ["resist-5.jpg", "A solo performer beneath an overhead projection"], ["resist-6.jpg", "The same environment transformed in red"], ["resist-7.jpg", "Projected foliage on screens at the edge of the stage"]]]], "accent": "#3d4d7a", "images": [["resist-1.jpg", "Flexible frames and a taped floor grid hold the stage open for each group"], ["resist-2.jpg", "Four performers at repurposed lecterns"], ["resist-3.jpg", "A suspended frame reconfigured for another evening"], ["resist-4.jpg", "Lines of rope divide the space in blue light"], ["resist-5.jpg", "A solo performer beneath an overhead projection"], ["resist-6.jpg", "The same environment transformed in red"], ["resist-7.jpg", "Projected foliage on screens at the edge of the stage"]], "hero": "resist-1.jpg", "drawing": false}, {"slug": "leonia", "title": "Leonia: City of Trashes", "role": "Workshop, The Dramatized Space", "venue": "TransBona-Halle", "city": "Basel", "country": "Switzerland", "year": "2022", "sort": 2022.1, "category": "theatre", "tags": ["Dramatised space", "Visual storytelling", "Environmental critique", "Lighting", "Soundscape"], "source": "Italo Calvino, Invisible Cities", "text": "Inspired by Italo Calvino’s Invisible Cities, this set presents a citizen bathing calmly in a sterile centre while rubbish gathers in the surrounding darkness. The single image carries a theatrical contradiction: comfort, denial and future collapse existing at once. Cold overhead light and a dark, unstable perimeter turn the space into a visual argument about consumption and indifference.", "stages": [["Building the set", [["leonia-2.jpg", "Rubbish gathered and piled around the bathtub"], ["leonia-3.jpg", "Making the foam surface of the bath"], ["leonia-5.jpg", "The team assembling the perimeter"]]], ["Lighting the image", [["leonia-4.jpg", "The set under work light"], ["leonia-1.jpg", "Final image: a calm bath in a sterile pool of cold light"], ["leonia-6.jpg", "The workshop group inside the finished set"]]]], "accent": "#2c4a7c", "images": [["leonia-2.jpg", "Rubbish gathered and piled around the bathtub"], ["leonia-3.jpg", "Making the foam surface of the bath"], ["leonia-5.jpg", "The team assembling the perimeter"], ["leonia-4.jpg", "The set under work light"], ["leonia-1.jpg", "Final image: a calm bath in a sterile pool of cold light"], ["leonia-6.jpg", "The workshop group inside the finished set"]], "hero": "leonia-1.jpg", "drawing": false}, {"slug": "rheingold", "title": "Adaptation of R(h)ein-gold Opera", "role": "Academic Project, MA Scenography", "venue": "FHNW Academy of Art and Design", "city": "Basel", "country": "Switzerland", "year": "2022", "sort": 2022.2, "category": "theatre", "tags": ["Opera adaptation", "Model making", "Feminist reinterpretation", "Choreography", "Partitura"], "source": "Richard Wagner, Das Rheingold — retold through Erda, Fricka and Freia", "text": "A contemporary reinterpretation of R(h)ein-gold through the perspectives of Erda, Fricka and Freia. The spatial design uses a double-level site as ground and underworld, echoing the opera’s vertical structure while shifting attention toward feminine agency, protest and transformation. Models, sketches and partitura communicate the movement of bodies through light, water and underground space.", "stages": [["Sketches", [["rheingold-s1.jpg", "The underground site in grey wash"], ["rheingold-s2.jpg", "Gold light enters the space"], ["rheingold-s3.jpg", "Violet currents: the transformation"]]], ["Model", [["rheingold-1.jpg", "Model view: ground level in blue light"], ["rheingold-m1.jpg", "Light columns reflected in water"], ["rheingold-m2.jpg", "Section through the double-level site"], ["rheingold-m3.jpg", "Light threads over the underworld"]]]], "accent": "#4b3fa8", "images": [["rheingold-s1.jpg", "The underground site in grey wash"], ["rheingold-s2.jpg", "Gold light enters the space"], ["rheingold-s3.jpg", "Violet currents: the transformation"], ["rheingold-1.jpg", "Model view: ground level in blue light"], ["rheingold-m1.jpg", "Light columns reflected in water"], ["rheingold-m2.jpg", "Section through the double-level site"], ["rheingold-m3.jpg", "Light threads over the underworld"]], "hero": "rheingold-1.jpg", "drawing": false}, {"slug": "biography-of-a-woman-in-colour", "title": "Biography of a Woman in Colour", "role": "Academic Project, MA Scenography", "venue": "FHNW Academy of Art and Design", "city": "Basel", "country": "Switzerland", "year": "2021", "sort": 2021.2, "category": "exhibition", "tags": ["Installation design", "Biography", "Empathy", "Colonial memory", "Letters across time"], "source": "A life told through letters between present and past", "text": "A scenographic biography developed through inner voices, letters between present and past, reflection and colour. The installation frames personal history as a spatial encounter, using models, text fragments and layered visual references to open a social discourse around memory, identity and colonial history.", "stages": [["Sketches", [["biography-s1.jpg", "The portrait wall"], ["biography-s2.jpg", "A gathering around coloured panes"], ["biography-s3.jpg", "Curved walls carrying letters"], ["biography-s4.jpg", "“To Anjama”: a letter column"], ["biography-s5.jpg", "“About Anjama”: a biography column"]]], ["Model", [["biography-1.jpg", "Model: mirrored columns over a scribbled ground"], ["biography-m1.jpg", "Text fragments wrapped around reflective columns"]]]], "accent": "#8a6d3b", "images": [["biography-s1.jpg", "The portrait wall"], ["biography-s2.jpg", "A gathering around coloured panes"], ["biography-s3.jpg", "Curved walls carrying letters"], ["biography-s4.jpg", "“To Anjama”: a letter column"], ["biography-s5.jpg", "“About Anjama”: a biography column"], ["biography-1.jpg", "Model: mirrored columns over a scribbled ground"], ["biography-m1.jpg", "Text fragments wrapped around reflective columns"]], "hero": "biography-1.jpg", "drawing": false}, {"slug": "tirgan-festival", "title": "Tirgan Festival at EPFL", "role": "Freelance Set Designer", "venue": "EPFL", "city": "Lausanne", "country": "Switzerland", "year": "2021", "sort": 2021.1, "category": "theatre", "tags": ["Budget set design", "Cultural festival", "Light and shadow", "Live event", "Visual atmosphere"], "source": "Tirgan, a Persian midsummer festival", "text": "A low-budget stage design for a Persian cultural festival, developed through light, shadow and simple scenic surfaces. The design created an atmospheric frame for music and performance while staying practical, quick to install and sensitive to the event’s cultural context.", "stages": [["Light on a simple surface", [["tirgan-1.jpg", "Musicians beneath a folded-paper mountain backdrop"], ["tirgan-2.jpg", "The backdrop before the audience arrives"], ["tirgan-3.jpg", "The same surface washed gold with calligraphy"], ["tirgan-4.jpg", "A tar player under lilac light"]]]], "accent": "#7a5aa8", "images": [["tirgan-1.jpg", "Musicians beneath a folded-paper mountain backdrop"], ["tirgan-2.jpg", "The backdrop before the audience arrives"], ["tirgan-3.jpg", "The same surface washed gold with calligraphy"], ["tirgan-4.jpg", "A tar player under lilac light"]], "hero": "tirgan-1.jpg", "drawing": false}, {"slug": "historic-hotel", "title": "Adaptive Reuse of a Historic Hotel", "role": "MA Interior Architecture", "venue": "Soore University", "city": "Tehran", "country": "Iran", "year": "2017", "sort": 2017, "category": "interior", "tags": ["Adaptive reuse", "Heritage interior", "Philosophy into form", "Concept design", "Drawing"], "source": "The philosophy of Ishraq (illumination) and the poetry of Rumi", "text": "A conceptual redesign of a historic hotel, translating philosophical and poetic references from Ishraq and Rumi into spatial atmosphere, colour and form. The project strengthened a method that remains central to the scenographic work: turning text, narrative and abstract concepts into inhabitable experience.", "stages": [["Drawings", [["hotel-1.jpg", "Section drawing with the whirling figure of the sema"], ["hotel-2.jpg", "Plan diagram of the spatial types"], ["hotel-3.jpg", "Section, type 3"], ["hotel-4.jpg", "Section, type 2"]]]], "accent": "#9a7b2f", "images": [["hotel-1.jpg", "Section drawing with the whirling figure of the sema"], ["hotel-2.jpg", "Plan diagram of the spatial types"], ["hotel-3.jpg", "Section, type 3"], ["hotel-4.jpg", "Section, type 2"]], "hero": "hotel-4.jpg", "drawing": true}, {"slug": "adaptive-reuse-pool", "title": "Adaptive Reuse of a Pool", "role": "MA Interior Architecture", "venue": "Soore University", "city": "Tehran", "country": "Iran", "year": "2016", "sort": 2016, "category": "interior", "tags": ["Adaptive reuse", "Daylight", "Collective space", "Persian colour", "Café concept"], "source": "A former swimming pool and the coloured light of Persian architecture", "text": "A transformation of a former pool into a café and collective space. The proposal keeps the memory of relaxation while drawing in natural light and coloured atmosphere inspired by classic Persian architecture.", "stages": [["Concept", [["pool-2.jpg", "Section and floor plans of the café"], ["pool-1.png", "Identity: “A cup of colourful light”"]]]], "accent": "#2f7a6a", "images": [["pool-2.jpg", "Section and floor plans of the café"], ["pool-1.png", "Identity: “A cup of colourful light”"]], "hero": "pool-2.jpg", "drawing": true}, {"slug": "align-rotkreuz", "title": "Align Project, Rotkreuz", "role": "Interior Architect, SAD Architekten", "venue": "Office interior", "city": "Rotkreuz", "country": "Switzerland", "year": "2020", "sort": 2020.1, "category": "interior", "tags": ["Office design", "Technical drawings", "Layouts", "Material coordination", "Documentation"], "source": "An office brief", "text": "Professional interior architecture work supporting design development, technical layouts and project documentation for an office environment. The role included drawings for flooring, ceiling, lighting and execution packages, alongside visual and photographic documentation.", "stages": [["Completed interior", [["align-1.jpg", "Timber shelving wall around a structural column"], ["align-2.jpg", "Stepped seating and whiteboard wall"], ["align-3.jpg", "Kitchen and meeting rooms under acoustic ceiling panels"]]]], "accent": "#b08a3a", "images": [["align-1.jpg", "Timber shelving wall around a structural column"], ["align-2.jpg", "Stepped seating and whiteboard wall"], ["align-3.jpg", "Kitchen and meeting rooms under acoustic ceiling panels"]], "hero": "align-1.jpg", "drawing": false}, {"slug": "hp-wallisellen", "title": "HP Office, Wallisellen", "role": "Interior Architect, SAD Architekten", "venue": "Office interior", "city": "Zurich", "country": "Switzerland", "year": "2020", "sort": 2020, "category": "interior", "tags": ["Office design", "Visualisation", "Finishes", "Technical coordination", "Workplace interiors"], "source": "A workplace brief", "text": "Professional office interior work involving layouts, visualisations, materials and technical coordination. Included as evidence of precision, documentation and spatial delivery experience behind the later scenographic practice.", "stages": [["Completed interior", [["hp-1.jpg", "Reception and lounge"], ["hp-2.jpg", "Shared tables with a view over Zurich"], ["hp-3.jpg", "Corridor and focus booths"], ["hp-4.jpg", "Conference room"]]]], "accent": "#3a6a9a", "images": [["hp-1.jpg", "Reception and lounge"], ["hp-2.jpg", "Shared tables with a view over Zurich"], ["hp-3.jpg", "Corridor and focus booths"], ["hp-4.jpg", "Conference room"]], "hero": "hp-1.jpg", "drawing": false}], "categories": {"theatre": "Theatre & Opera", "exhibition": "Exhibition & Installation", "interior": "Interior Architecture"}, "statement": ["My work begins with content: a novel, a diary, an opera, a biography, a social tension, or a brief that needs to become an experience. I am interested in the point where language becomes spatial, and where light, material, scale, rhythm, sound and audience movement begin to carry the narrative.", "For set and spatial design roles, I bring a combination of conceptual imagination and practical production experience. I can develop a brief into mood, layout, visualisation and presentation material while staying attentive to budget, existing assets, installation realities and collaboration with production, technical and front-of-house teams.", "Across theatre, museum, exhibition and interior projects, the consistent thread is translation: from text to atmosphere, from research to object, from concept to a space people can enter."], "statementTitle": "Narrative space as a way of thinking", "strengths": ["Concept development from written, visual and spatial research", "Set, exhibition and spatial storytelling for live and public contexts", "Mood boards, layouts, model making, visualisation and presentation decks", "Practical delivery: props, scenic reuse, installation and fast revision"], "education": [["2021–2023", "MA Scenography & Exhibition Design", "Academy of Art and Design FHNW, Basel, Switzerland"], ["2016–2019", "MA Interior Architecture", "Soore University, Tehran, Iran"], ["2009–2015", "BSc Mechanical Engineering", "University of Tehran, Tehran, Iran"]], "experience": [["2025–now", "Story Guide & Event Assistant", "The Story Museum, Oxford", "Engaging audiences through immersive, storytelling-led exhibitions; supporting exhibition operations, events and venue hires."], ["2018–now", "Freelance Scenographer, Set & Exhibition Designer", "UK & Switzerland", "Noughts & Crosses story-space, The Story Museum (2025–26) · Scenography consultant, “Comics at War”, Basel (2022) · Co-set designer, Resist-Opera, Theater Basel (2022) · Tirgan festival, EPFL (2021) · Theatre set, Bolbol School Zürich (2021) · Mask design for children’s theatre, Tehran (2018)"], ["2021–2023", "Research Associate", "HSLU, Lucerne", "Researched design strategies for outdoor and interior soundscapes, including acoustic materials and systems."], ["2019–2020", "Interior Architect", "SAD Architekten, Zurich", "Technical drawings, layouts, visualisations and presentations from concept through delivery; material selection and coordination."], ["2017", "Interior Designer", "Nic. Collection, Tehran", "Interior design consultations and showroom support."], ["2016–2023", "Teacher", "Tehran & Zurich", "Mathematics, architecture and origami workshops (Tehran); Persian language and culture (Bolbol School Zürich)."]], "skills": [["2D drafting", "AutoCAD, Vectorworks"], ["3D & visualisation", "Vectorworks, Rhino, Revit"], ["Graphics", "Photoshop, Illustrator, InDesign"], ["Making", "Model making, carpentry, metalwork, props, prototyping, installation"]], "languages": "Persian (native) · English (fluent) · German (B1/B2) · French (beginner)", "email": "mohadese.rezaie@gmail.com", "location": "Oxford, UK", "places": {"Tehran": [51.39, 35.69], "Zurich": [8.54, 47.37], "Rotkreuz": [8.43, 47.14], "Basel": [7.59, 47.56], "Lausanne": [6.63, 46.52], "Oxford": [-1.26, 51.75]}};
+const $ = (s,el=document)=>el.querySelector(s);
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const P = DATA.projects, app = $("#app");
+const no = i=>"Cat. "+String(i+1).padStart(2,"0");
+let filter = "all";
+try{ filter = sessionStorage.getItem("mr-filter")||"all" }catch(e){}
+
+function card(p){
+  const i=P.indexOf(p);
+  return `<a class="card ${p.drawing?"drawing":""}" href="#${p.slug}" data-cat="${p.category}">
+    <div class="frame"><img src="img/${p.hero}" alt="${esc(p.title)}" loading="lazy"></div>
+    <div class="label"><span class="no">${no(i)}</span><h3>${esc(p.title)}</h3>
+      <span class="meta">${esc(p.role)} · ${esc(p.venue)}, ${esc(p.city)}, ${p.year}</span>
+      <span class="medium">${esc(p.tags.slice(0,3).join(", "))}</span></div></a>`;
+}
+
+function home(){
+  const f=P[0];
+  const cats=Object.entries(DATA.categories);
+  app.innerHTML=`<div class="view">
+  <section class="wrap intro">
+    <div>
+      <div class="eyebrow">Scenography &amp; exhibition design · Oxford</div>
+      <h1 class="lede" style="margin-top:18px">From text <em>to a space</em> people can enter.</h1>
+      <p class="sub">Mohi Rezaei designs sets, story-spaces and exhibitions that begin with a novel, an opera, a diary or a biography, and turn it into light, material and movement.</p>
+    </div>
+    <a class="feature" href="#${f.slug}">
+      <div class="frame"><img src="img/${f.hero}" alt="${esc(f.title)}"></div>
+      <div class="label" style="margin-top:16px"><span class="no">Now</span><h3>${esc(f.title)}</h3>
+        <span class="meta">${esc(f.role)} · ${esc(f.venue)}, ${f.city}, ${f.year}</span></div>
+    </a>
+  </section>
+  <section class="wrap" aria-label="Selected work">
+    <div class="filters" role="group" aria-label="Filter projects">
+      <span class="eyebrow">Selected work</span>
+      <button class="chip" data-f="all">All</button>
+      ${cats.map(([k,v])=>`<button class="chip" data-f="${k}">${v}</button>`).join("")}
+    </div>
+    <div class="grid" id="grid">${P.map(card).join("")}</div>
+  </section></div>`;
+  const apply=()=>{
+    app.querySelectorAll(".chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.f===filter));
+    app.querySelectorAll(".card[data-cat]").forEach(c=>c.hidden=filter==="all"?c.getAttribute("href")==="#"+P[0].slug:c.dataset.cat!==filter);
+  };
+  app.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{filter=b.dataset.f;try{sessionStorage.setItem("mr-filter",filter)}catch(e){};apply()});
+  apply();
+  document.title="Mohi Rezaei — Set Design, Scenography & Exhibition Design";
+}
+
+function project(p){
+  const i=P.indexOf(p), prev=P[(i-1+P.length)%P.length], next=P[(i+1)%P.length];
+  const heroCap=(p.images.find(x=>x[0]===p.hero)||[p.hero,p.title])[1];
+  let k=0;
+  const steps=p.stages.map((st,si)=>{
+    const imgs=st[1];
+    return `<div class="step"><div class="step-k"><span class="n">${String(si+2).padStart(2,"0")}</span><h2>${esc(st[0])}</h2></div>
+      <div class="plates ${imgs.length<=3?"two":""}">${imgs.map(([f,c],j)=>{const idx=k++;return `
+        <figure class="plate ${f.endsWith(".png")?"contain":""}"><button data-i="${idx}" aria-label="Enlarge: ${esc(c)}"><img src="img/${f}" alt="${esc(c)}" loading="lazy"></button>
+        <figcaption><span class="k">${String(si+2).padStart(2,"0")}.${j+1}</span>${esc(c)}</figcaption></figure>`}).join("")}</div></div>`;
+  }).join("");
+  app.innerHTML=`<div class="view"><div class="wrap">
+    <a class="back" href="#work">← All work</a>
+    <div class="p-head">
+      <div><div class="eyebrow">${no(i)} · ${DATA.categories[p.category]}</div><h1>${esc(p.title)}</h1></div>
+      <dl class="facts">
+        <dt>Role</dt><dd>${esc(p.role)}</dd>
+        <dt>Venue</dt><dd>${esc(p.venue)}</dd>
+        <dt>Place</dt><dd>${esc(p.city)}, ${esc(p.country)}</dd>
+        <dt>Year</dt><dd>${p.year}</dd>
+      </dl>
+    </div>
+    <div class="p-hero"><img src="img/${p.hero}" alt="${esc(heroCap)}" data-hero></div>
+    <div class="process">
+      <div class="step"><div class="step-k"><span class="n">01</span><h2>Source</h2></div>
+        <div><p class="source">${esc(p.source)}</p>
+          <div class="prose" style="margin-top:22px"><p>${esc(p.text)}</p></div>
+          <ul class="tags">${p.tags.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div></div>
+      ${steps}
+    </div>
+    <nav class="pager" aria-label="More projects">
+      <a href="#${prev.slug}"><span>← Previous</span><b>${esc(prev.title)}</b></a>
+      <a href="#${next.slug}"><span>Next →</span><b>${esc(next.title)}</b></a>
+    </nav>
+  </div></div>`;
+  const all=p.images;
+  app.querySelectorAll("figure.plate button").forEach(b=>b.onclick=()=>openLB(all,+b.dataset.i));
+  $("[data-hero]",app).onclick=()=>openLB(all,Math.max(0,all.findIndex(x=>x[0]===p.hero)));
+  document.title=p.title+" — Mohi Rezaei";
+}
+
+function about(){
+  const D=DATA;
+  app.innerHTML=`<div class="view"><section class="wrap about">
+    <aside>
+      <div class="eyebrow">About</div>
+      <h1 class="lede" style="font-size:clamp(2rem,4vw,3rem)">${esc(D.statementTitle)}</h1>
+      <a class="btn" href="Mohi-Rezaei-CV.pdf" target="_blank" rel="noopener">Download CV (PDF) ↗</a>
+      <dl class="facts" style="margin-top:8px">
+        <dt>Based</dt><dd>${esc(D.location)}</dd>
+        <dt>Languages</dt><dd>${esc(D.languages)}</dd>
+      </dl>
+    </aside>
+    <div>
+      <div class="prose" style="font-size:1.06rem">${D.statement.map(s=>`<p>${esc(s)}</p>`).join("")}</div>
+      <h2 class="sec">Strengths</h2>
+      <ul class="plain">${D.strengths.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>
+      <h2 class="sec">Experience</h2>
+      <div class="rows">${D.experience.map(([y,r,a,d])=>`<div class="row"><span class="yr">${y}</span><div><b>${esc(r)}</b> <span class="at">· ${esc(a)}</span></div><p>${esc(d)}</p></div>`).join("")}</div>
+      <h2 class="sec">Education</h2>
+      <div class="rows">${D.education.map(([y,d,s])=>`<div class="row"><span class="yr">${y}</span><div><b>${esc(d)}</b><br><span class="at">${esc(s)}</span></div></div>`).join("")}</div>
+      <h2 class="sec">Tools &amp; making</h2>
+      <div class="rows">${D.skills.map(([k,v])=>`<div class="row"><span class="yr">${esc(k)}</span><div>${esc(v)}</div></div>`).join("")}</div>
+    </div>
+  </section></div>`;
+  document.title="About — Mohi Rezaei";
+}
+
+function route(){
+  const h=location.hash.slice(1);
+  const p=P.find(x=>x.slug===h);
+  const cur=p?"work":(h==="about"?"about":(h==="contact"?"contact":"work"));
+  document.querySelectorAll("[data-nav]").forEach(a=>{ if(a.dataset.nav===cur) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  if(h==="contact"){ if(!app.innerHTML) home(); $("#contact").scrollIntoView(); return; }
+  if(p) project(p); else if(h==="about") about(); else home();
+  window.scrollTo(0,0);
+}
+
+/* lightbox */
+const lb=$("#lb"); let set=[], at=0;
+function show(){ $("#lb-img").src="img/"+set[at][0]; $("#lb-img").alt=set[at][1]; $("#lb-cap").textContent=set[at][1]+"  ·  "+(at+1)+" / "+set.length; }
+function openLB(s,i){ set=s; at=i; show(); lb.showModal(); }
+$("#lb-x").onclick=()=>lb.close();
+$("#lb-pv").onclick=()=>{at=(at-1+set.length)%set.length;show()};
+$("#lb-nx").onclick=()=>{at=(at+1)%set.length;show()};
+lb.addEventListener("click",e=>{if(e.target===lb||e.target.classList.contains("lb-in"))lb.close()});
+document.addEventListener("keydown",e=>{if(!lb.open)return;if(e.key==="ArrowLeft")$("#lb-pv").click();if(e.key==="ArrowRight")$("#lb-nx").click();});
+
+$("#mail").textContent=DATA.email; $("#mail").href="mailto:"+DATA.email;
+$("#loc").textContent=DATA.location; $("#yr").textContent=new Date().getFullYear();
+addEventListener("hashchange",route); route();
+</script>
+<!--BODY-END-->
+</html>
