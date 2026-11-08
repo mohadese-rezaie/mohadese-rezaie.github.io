@@ -7,6 +7,13 @@
 <title>Mohi Rezaei Scenography</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Mohi Rezaei — set designer, scenographer and exhibition designer based in Oxford, UK.">
+<link rel="canonical" href="https://mohadese-rezaie.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mohadese-rezaie.github.io/">
+<meta property="og:title" content="Mohi Rezaei — Set Design, Scenography &amp; Exhibition Design">
+<meta property="og:description" content="Sets, story-spaces and exhibitions that turn a novel, an opera or a life into a space people can enter. Based in Oxford, UK.">
+<meta property="og:image" content="https://mohadese-rezaie.github.io/img/noughts-3.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -134,6 +141,10 @@ figcaption .k{font:400 .7rem/1 var(--mono);font-style:normal;color:var(--oxblood
 .about{display:grid;gap:56px;padding-block:56px 96px}
 @media (min-width:900px){.about{grid-template-columns:4fr 8fr;gap:64px}}
 .about aside{display:flex;flex-direction:column;gap:22px}
+.portrait{margin:0;display:flex;flex-direction:column;gap:10px;max-width:340px}
+.portrait img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:var(--plinth)}
+@media (max-width:899px){.portrait{max-width:240px}}
+.portrait figcaption{font:italic .86rem/1.4 var(--serif);color:var(--muted)}
 .about h2.sec{font:400 1.5rem/1.2 var(--display);margin:56px 0 18px;padding-top:24px;border-top:1px solid var(--rule)}
 .about h2.sec:first-child{margin-top:0}
 ul.plain{list-style:none;padding:0;margin:0;display:grid;gap:10px}
@@ -304,6 +315,7 @@ function about(){
   const D=DATA;
   app.innerHTML=`<div class="view"><section class="wrap about">
     <aside>
+      <figure class="portrait"><img src="img/mohi-portrait.jpg" alt="Portrait of Mohadeseh (Mohi) Rezaei" width="630" height="630"><figcaption>Mohadeseh (Mohi) Rezaei · Oxford</figcaption></figure>
       <div class="eyebrow">About</div>
       <h1 class="lede" style="font-size:clamp(2rem,4vw,3rem)">${esc(D.statementTitle)}</h1>
       <a class="btn" href="Mohi-Rezaei-CV.pdf" target="_blank" rel="noopener">Download CV (PDF) ↗</a>
